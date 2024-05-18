@@ -1,13 +1,16 @@
 import React from 'react';
+import axios from 'axios';
 import { useStorageState } from './useStorageState';
 
 const AuthContext = React.createContext<{
-  signIn: () => void;
+  register: (username: string, email: string, password: string) => Promise<void>;
+  signIn: (email: string, password: string) => Promise<void>;
   signOut: () => void;
   session?: string | null;
   isLoading: boolean;
 }>({
-  signIn: () => null,
+  register: async () => {},
+  signIn: async () => {},
   signOut: () => null,
   session: null,
   isLoading: false,
@@ -28,16 +31,42 @@ export function useSession() {
 export function SessionProvider(props: React.PropsWithChildren) {
   const [[isLoading, session], setSession] = useStorageState('session');
 
+  const register = async (username: string, email: string, password: string) => {
+    try {
+      const response = await axios.post(
+        `${process.env.EXPO_PUBLIC_API_URL}/auth/local/register`,
+        { username, email, password },
+        { headers: { Authorization: `Bearer ${process.env.EXPO_PUBLIC_API_KEY}` } }
+      );
+      setSession(response.data.jwt);
+    } catch (error) {
+      console.error('Failed to register', error);
+    }
+  };
+
+  const signIn = async (email: string, password: string) => {
+    try {
+      const response = await axios.post(
+        `${process.env.EXPO_PUBLIC_API_URL}/auth/local`,
+        { identifier: email, password },
+        { headers: { Authorization: `Bearer ${process.env.EXPO_PUBLIC_API_KEY}` } }
+      );
+      setSession(response.data.jwt);
+    } catch (error) {
+      console.error('Failed to sign in', error);
+    }
+  };
+
+  const signOut = () => {
+    setSession(null);
+  };
+
   return (
     <AuthContext.Provider
       value={{
-        signIn: () => {
-          // Perform sign-in logic here
-          setSession('xxx');
-        },
-        signOut: () => {
-          setSession(null);
-        },
+        register,
+        signIn,
+        signOut,
         session,
         isLoading,
       }}>

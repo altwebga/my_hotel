@@ -51,6 +51,7 @@ const Input: React.FC<InputProps> = ({
 
 const styles = StyleSheet.create({
   container: {
+    width: '90%',
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
