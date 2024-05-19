@@ -34,7 +34,7 @@ export function SessionProvider(props: React.PropsWithChildren) {
   const register = async (username: string, email: string, password: string) => {
     try {
       const response = await axios.post(
-        `${process.env.EXPO_PUBLIC_API_URL}/auth/local/register`,
+        `${process.env.EXPO_PUBLIC_API_URL}/auth/local/register`, // Strapi URL: domain/api/auth/local/register
         { username, email, password },
         { headers: { Authorization: `Bearer ${process.env.EXPO_PUBLIC_API_KEY}` } }
       );

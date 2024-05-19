@@ -1,50 +1,64 @@
-# Welcome to your Expo app 👋
+# MyHotel
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+MyHotel — это приложение для управления бронированием и регистрации гостей в отелях. Данное приложение предоставляет интерфейс для пользователей и администратора для удобного управления всеми аспектами работы отеля.
 
-## Get started
+## Функциональные возможности
 
-1. Install dependencies
+- **Регистрация и авторизация пользователей**
+- **Управление бронированиями**
+- **Настройки пользователя**
+- **Интерфейс администратора**
 
-   ```bash
-   npm install
-   ```
+## Установка
 
-2. Start the app
+Чтобы установить и запустить приложение локально, выполните следующие шаги:
 
-   ```bash
-    npx expo start
-   ```
+1. Склонируйте репозиторий:
+    ```sh
+    git clone https://github.com/yourusername/my_hotel.git
+    ```
+2. Перейдите в директорию проекта:
+    ```sh
+    cd my_hotel
+    ```
+3. Установите зависимости:
+    ```sh
+    npm install
+    ```
+4. Запустите приложение:
+    ```sh
+    npm start
+    ```
 
-In the output, you'll find options to open the app in a
+## Структура проекта
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- `.gitignore` — файлы и директории, игнорируемые Git.
+- `README.md` — документация проекта.
+- `app.json` — конфигурационный файл приложения.
+- `babel.config.js` — конфигурация Babel.
+- `package-lock.json` — информация о зависимостях проекта.
+- `package.json` — описание проекта и его зависимостей.
+- `tsconfig.json` — конфигурация TypeScript.
+- `app/` — основная директория с исходным кодом приложения.
+  - `_layout.tsx` — основной макет приложения.
+  - `(private)/` — компоненты для авторизованных пользователей.
+  - `(public)/` — компоненты для неавторизованных пользователей.
+- `components/` — переиспользуемые компоненты интерфейса.
+  - `Button.tsx` — компонент кнопки.
+  - `Heading.tsx` — компонент заголовка.
+  - `Input.tsx` — компонент ввода.
+- `provider/` — провайдеры контекста для управления состоянием.
+  - `ctx.tsx` — контекст приложения.
+  - `useStorageState.tsx` — хук для работы с состоянием в локальном хранилище.
+- `scripts/` — скрипты для различных задач.
+  - `reset-project.js` — скрипт для сброса состояния проекта.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Технологии
 
-## Get a fresh project
+Проект использует следующие технологии:
 
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- React
+- TypeScript
+- Babel
+- Node.js
+- npm
