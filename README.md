@@ -1,64 +1,61 @@
-# MyHotel
+# 🚀 Getting started with Strapi
 
-MyHotel — это приложение для управления бронированием и регистрации гостей в отелях. Данное приложение предоставляет интерфейс для пользователей и администратора для удобного управления всеми аспектами работы отеля.
+Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 
-## Функциональные возможности
+### `develop`
 
-- **Регистрация и авторизация пользователей**
-- **Управление бронированиями**
-- **Настройки пользователя**
-- **Интерфейс администратора**
+Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
-## Установка
+```
+npm run develop
+# or
+yarn develop
+```
 
-Чтобы установить и запустить приложение локально, выполните следующие шаги:
+### `start`
 
-1. Склонируйте репозиторий:
-    ```sh
-    git clone https://github.com/yourusername/my_hotel.git
-    ```
-2. Перейдите в директорию проекта:
-    ```sh
-    cd my_hotel
-    ```
-3. Установите зависимости:
-    ```sh
-    npm install
-    ```
-4. Запустите приложение:
-    ```sh
-    npm start
-    ```
+Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
 
-## Структура проекта
+```
+npm run start
+# or
+yarn start
+```
 
-- `.gitignore` — файлы и директории, игнорируемые Git.
-- `README.md` — документация проекта.
-- `app.json` — конфигурационный файл приложения.
-- `babel.config.js` — конфигурация Babel.
-- `package-lock.json` — информация о зависимостях проекта.
-- `package.json` — описание проекта и его зависимостей.
-- `tsconfig.json` — конфигурация TypeScript.
-- `app/` — основная директория с исходным кодом приложения.
-  - `_layout.tsx` — основной макет приложения.
-  - `(private)/` — компоненты для авторизованных пользователей.
-  - `(public)/` — компоненты для неавторизованных пользователей.
-- `components/` — переиспользуемые компоненты интерфейса.
-  - `Button.tsx` — компонент кнопки.
-  - `Heading.tsx` — компонент заголовка.
-  - `Input.tsx` — компонент ввода.
-- `provider/` — провайдеры контекста для управления состоянием.
-  - `ctx.tsx` — контекст приложения.
-  - `useStorageState.tsx` — хук для работы с состоянием в локальном хранилище.
-- `scripts/` — скрипты для различных задач.
-  - `reset-project.js` — скрипт для сброса состояния проекта.
+### `build`
 
-## Технологии
+Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
 
-Проект использует следующие технологии:
+```
+npm run build
+# or
+yarn build
+```
 
-- React
-- TypeScript
-- Babel
-- Node.js
-- npm
+## ⚙️ Deployment
+
+Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+
+```
+yarn strapi deploy
+```
+
+## 📚 Learn more
+
+- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
+- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
+- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
+- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
+- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+
+Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+
+## ✨ Community
+
+- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
+- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
+- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+
+---
+
+<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
